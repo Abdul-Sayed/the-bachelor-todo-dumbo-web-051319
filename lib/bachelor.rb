@@ -6,8 +6,8 @@ def get_first_name_of_season_winner(data, season_number)
 		if (season.to_s == season_number)
 			contestants.each { |contestant|
 
-				if (contestant[:status] == "Winner")
-					winner = contestant[:name]
+				if (contestant["status"] == "Winner")
+					winner = contestant["name"]
 				end
 			}
 		end
