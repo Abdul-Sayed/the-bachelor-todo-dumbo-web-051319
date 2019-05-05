@@ -62,6 +62,22 @@ end
 
 ###############################################################
 
-def get_average_age_for_season(data, season)
-  # code here
+def get_average_age_for_season(data, season_number)
+  
+	ages = []
+
+  data.each { |season, contestants|
+
+		if (season == season_number)
+			contestants.each { |contestant|
+				ages << contestant["age"]
+			}
+		end
+  }
+	sum = 0
+	for age in ages
+		sum += age.to_f
+	end
+
+	return (sum / ages.length).round
 end
